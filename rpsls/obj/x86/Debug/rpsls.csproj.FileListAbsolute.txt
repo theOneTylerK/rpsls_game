@@ -1,0 +1,6 @@
+/Users/tylerkoepke/Desktop/DevCodeCamp/Assignments/rpsls/rpsls/rpsls/bin/Debug/rpsls.exe
+/Users/tylerkoepke/Desktop/DevCodeCamp/Assignments/rpsls/rpsls/rpsls/bin/Debug/rpsls.pdb
+/Users/tylerkoepke/Desktop/DevCodeCamp/Assignments/rpsls/rpsls/rpsls/obj/x86/Debug/rpsls.csprojAssemblyReference.cache
+/Users/tylerkoepke/Desktop/DevCodeCamp/Assignments/rpsls/rpsls/rpsls/obj/x86/Debug/rpsls.csproj.CoreCompileInputs.cache
+/Users/tylerkoepke/Desktop/DevCodeCamp/Assignments/rpsls/rpsls/rpsls/obj/x86/Debug/rpsls.exe
+/Users/tylerkoepke/Desktop/DevCodeCamp/Assignments/rpsls/rpsls/rpsls/obj/x86/Debug/rpsls.pdb

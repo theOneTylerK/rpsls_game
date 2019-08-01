@@ -1,14 +1,19 @@
 ﻿<Properties StartupConfiguration="{F85868F9-0B35-41B4-A556-351BC0FEACD8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="rpsls/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="rpsls/CPU.cs">
     <Files>
-      <File FileName="rpsls/Program.cs" Line="1" Column="1" />
+      <File FileName="rpsls/Program.cs" Line="14" Column="29" />
+      <File FileName="rpsls/StartGame.cs" Line="16" Column="10" />
+      <File FileName="rpsls/Gestures.cs" Line="19" Column="38" />
+      <File FileName="rpsls/Player.cs" Line="15" Column="46" />
+      <File FileName="rpsls/Human.cs" Line="11" Column="1" />
+      <File FileName="rpsls/CPU.cs" Line="5" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="rpsls" expanded="True">
             <Node name="rpsls" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="CPU.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -20,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.ItemProperties.rpsls FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.rpsls PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
