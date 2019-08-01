@@ -141,15 +141,18 @@ namespace rpsls
             PlayerTwo.WinCounter = 0;
             while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
             {
+                Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                 CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                 if(PlayerOne.WinCounter == 2)
                 {
-                    Console.WriteLine(PlayerOne.name + " Wins!");
+                    Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                    Console.WriteLine(PlayerOne.name + " Wins!");                    
                     break;
                 }
                 else if (PlayerTwo.WinCounter == 2)
                 {
-                    Console.WriteLine(PlayerTwo.name + " Wins!");
+                    Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                    Console.WriteLine(PlayerTwo.name + " Wins!");                
                     break;
                 }
             }

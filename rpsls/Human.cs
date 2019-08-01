@@ -42,7 +42,8 @@ namespace rpsls
                     gesture = playerInput;
                     break;
                 default:
-                    Console.WriteLine("Please choose an available option.");
+                    Console.WriteLine("You can't win this game with bananas or flamingos.");
+                    MakeChoice();
                     break;
             }
             return gesture;
