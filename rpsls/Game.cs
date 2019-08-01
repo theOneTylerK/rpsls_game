@@ -28,15 +28,16 @@ namespace rpsls
         }
 
         //Member Methods (Can Do)
-        private int GetNumberOfPlayers()
+        //private int GetNumberOfPlayers()
+        //{
+            
+        //}
+        private void EstablishPlayers()
         {
             Console.WriteLine("How many number of players?");
             int NumberOfPlayers = int.Parse(Console.ReadLine());
-            return NumberOfPlayers;
-        }
-        private void EstablishPlayers(int NumberOfPlayers)
-        {
-            if(NumberOfPlayers == 1)
+
+            if (NumberOfPlayers == 1)
             {
                 PlayerOne = new Human();
                 PlayerTwo = new CPU();
@@ -65,26 +66,73 @@ namespace rpsls
                 "Spock > Scissors, " +
                 "Spock > Rock.");
         }
+
+        private void CompareGestures(string PlayerOneChoice, string PlayerTwoChoice)
+        {
+            if (PlayerOneChoice == "rock" && PlayerTwoChoice == "scissors" || PlayerTwoChoice == "lizard")
+            {
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                PlayerOne.WinCounter += 1;
+            }
+            //if (int.Parse(PlayerOneChoice) > int.Parse(PlayerTwoChoice))
+            //{
+            //    Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+            //    PlayerOne.WinCounter += 1;
+            //}
+            else if(PlayerOneChoice == "paper" && PlayerTwoChoice == "rock" || PlayerTwoChoice == "Spock")
+            {
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                PlayerOne.WinCounter += 1;
+            }
+            else if(PlayerOneChoice == "scissors" && PlayerTwoChoice == "paper" || PlayerTwoChoice == "lizard")
+            {
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                PlayerOne.WinCounter += 1;
+            }
+            else if(PlayerOneChoice == "lizard" && PlayerTwoChoice == "spock" || PlayerTwoChoice == "paper")
+            {
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                PlayerOne.WinCounter += 1;
+            }
+            else if(PlayerOneChoice == "spock" && PlayerTwoChoice == "scissors" || PlayerTwoChoice == "rock")
+            {
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                PlayerOne.WinCounter += 1;
+            }
+            else if (PlayerOneChoice == PlayerTwoChoice)
+            {
+                Console.WriteLine("Draw");
+                PlayerOne.WinCounter += 0;
+                PlayerTwo.WinCounter += 0;
+
+            }
+            else
+            {
+                Console.WriteLine(PlayerTwoChoice + " beats " + PlayerOneChoice + " " + PlayerTwo.name + " wins the round");
+                PlayerTwo.WinCounter += 1;
+               
+            }
+        }
         public void StartGame()
         {
             DisplayRules();
-            GetNumberOfPlayers();
-            EstablishPlayers(GetNumberOfPlayers());
+            EstablishPlayers();
             PlayerOne.ChooseName();
             PlayerTwo.ChooseName();
-        while(PlayerOne.WinCounter > 2 && PlayerTwo.WinCounter > 2)
+            PlayerOne.WinCounter = 0;
+            PlayerTwo.WinCounter = 0;
+            while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
             {
-                PlayerOne.MakeChoice();
-                PlayerTwo.MakeChoice();
+                CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                 if(PlayerOne.WinCounter == 2)
                 {
-                    Console.WriteLine(PlayerOne.name + "Wins!");
-                    break;
+                    Console.WriteLine(PlayerOne.name + " Wins!");
+                    //break;
                 }
                 else if (PlayerTwo.WinCounter == 2)
                 {
-                    Console.WriteLine(PlayerTwo.name + "Wins!");
-                    break;
+                    Console.WriteLine(PlayerTwo.name + " Wins!");
+                    //break;
                 }
             }
 

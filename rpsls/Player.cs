@@ -21,7 +21,7 @@ namespace rpsls
         public abstract void ChooseName();
 
 
-        public abstract void MakeChoice();
+        public abstract string MakeChoice();
         
     }
 }

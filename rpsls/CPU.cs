@@ -12,7 +12,7 @@ namespace rpsls
         }
 
         //Member Methods (Can Do)
-        public override void MakeChoice()
+        public override string MakeChoice()
         {
             Console.WriteLine("Make your decision: Rock, Paper, Scissors, Lizard, or Spock?");
             string playerInput = Console.ReadLine().ToLower();
@@ -31,6 +31,7 @@ namespace rpsls
                 case "spock":
                     break;
             }
+            return gesture;
         }
         public override void ChooseName()
         {
