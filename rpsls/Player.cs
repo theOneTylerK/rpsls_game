@@ -1,39 +1,27 @@
 ﻿using System;
 namespace rpsls
 {
-    public class Player
+    public abstract class Player
     {
         //Member Variables (Has A)
         public int WinCounter;
-        public int PlayerNumber;
+        public string name;
+        public string gesture;
 
         //Constructor (Spawner)
-        public Player(int PlayerNumber)
+        public Player()
         {
             WinCounter = 0;
-            this.PlayerNumber = PlayerNumber;
+            this.name = name;
+            
 
         }
 
         //member Methods (Can Do)
-        public string MakeChoice(string ChooseGesture)
-        {
-            switch (ChooseGesture)
-            {
-                case "rock":
-                    Console.WriteLine("You Chose rock");
-                    break;
-                case "paper":
-                    break;
-                case "scisors":
-                    break;
-                case "lizard":
-                    break;
-                case "spock":
-                    break;
-            }
-            Console.ReadLine();
-            return " ";
-        }
+        public abstract void ChooseName();
+
+
+        public abstract void MakeChoice();
+        
     }
 }

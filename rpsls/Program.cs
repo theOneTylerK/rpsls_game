@@ -8,10 +8,10 @@ namespace rpsls
         public static void Main(string[] args)
         {
 
-            Gestures gestures = new Gestures();
-            gestures.ChooseGesture();
-            Player pla = new Player(1);
-            pla.MakeChoice("rock");
+
+
+            Game game = new Game();
+            game.StartGame();
         }
     }
 }

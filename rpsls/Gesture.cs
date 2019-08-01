@@ -3,33 +3,26 @@ using System.Collections.Generic;
 
 namespace rpsls
 {
-    public class Gestures
+    public class Gesture
     {
         // member variables (Has A)
-        List<string> AvailableGestures;
+        public string name;
+        public bool didWin;
+        
 
         //Constructor (Spawner)
-        public Gestures()
+        public Gesture(string name)
         {
-            AvailableGestures = new List<string>();
-            AvailableGestures.Add("rock");
-            AvailableGestures.Add("paper");
-            AvailableGestures.Add("scissors");
-            AvailableGestures.Add("lizard");
-            AvailableGestures.Add("spock");
+            this.name = name;
+            didWin = false;
      
         }
 
         //member methods (Can Do)
-        public string ChooseGesture()
+        public bool GestureWon()
         {
-
-           Console.WriteLine("Make your decision: ");
-            foreach (string el in AvailableGestures)
-                Console.WriteLine(el);
-            string PlayerChoice = Console.ReadLine().ToLower();
-                return PlayerChoice;
-            
+            didWin = true;
+            return didWin;
         }
        
 
