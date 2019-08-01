@@ -1,20 +1,18 @@
 ﻿<Properties StartupConfiguration="{F85868F9-0B35-41B4-A556-351BC0FEACD8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="rpsls/CPU.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="rpsls/Game.cs">
     <Files>
-      <File FileName="rpsls/Program.cs" Line="14" Column="29" />
-      <File FileName="rpsls/StartGame.cs" Line="16" Column="10" />
-      <File FileName="rpsls/Gestures.cs" Line="19" Column="38" />
-      <File FileName="rpsls/Player.cs" Line="15" Column="46" />
-      <File FileName="rpsls/Human.cs" Line="11" Column="1" />
-      <File FileName="rpsls/CPU.cs" Line="5" Column="6" />
+      <File FileName="rpsls/Program.cs" Line="14" Column="1" />
+      <File FileName="rpsls/StartGame.cs" Line="132" Column="1" />
+      <File FileName="rpsls/Gestures.cs" Line="16" Column="30" />
+      <File FileName="rpsls/Player.cs" Line="19" Column="13" />
+      <File FileName="rpsls/Human.cs" Line="21" Column="1" />
+      <File FileName="rpsls/CPU.cs" Line="22" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="rpsls" expanded="True">
-            <Node name="rpsls" expanded="True">
-              <Node name="CPU.cs" selected="True" />
-            </Node>
+            <Node name="rpsls" expanded="True" />
           </Node>
         </State>
       </Pad>

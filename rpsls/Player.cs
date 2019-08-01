@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace rpsls
 {
     public abstract class Player
@@ -7,13 +9,19 @@ namespace rpsls
         public int WinCounter;
         public string name;
         public string gesture;
+        protected List<string> AvailableGestures;
 
         //Constructor (Spawner)
         public Player()
         {
             WinCounter = 0;
             this.name = name;
-            
+            AvailableGestures= new List<string>();
+            AvailableGestures.Add("rock");
+            AvailableGestures.Add("paper");
+            AvailableGestures.Add("scissors");
+            AvailableGestures.Add("lizard");
+            AvailableGestures.Add("spock");
 
         }
 

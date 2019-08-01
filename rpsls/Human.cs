@@ -17,7 +17,7 @@ namespace rpsls
         public override string MakeChoice()
         {
 
-            Console.WriteLine("Make your decision: Rock, Paper, Scissors, Lizard, or Spock.");
+            Console.WriteLine(name + ", make your decision: Rock, Paper, Scissors, Lizard, or Spock.");
             string playerInput = Console.ReadLine().ToLower();
             switch (playerInput)
             {

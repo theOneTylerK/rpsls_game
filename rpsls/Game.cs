@@ -10,7 +10,7 @@ namespace rpsls
         public string Rules;
         public Player PlayerOne;
         public Player PlayerTwo;
-        List<string> AvailableGestures = new List<string>();
+        public List<string> AvailableGestures = new List<string>();
 
 
 
@@ -18,12 +18,8 @@ namespace rpsls
         //Construcor (Spawner)
         public Game()
         {
+            
 
-            AvailableGestures.Add("rock");
-            AvailableGestures.Add("paper");
-            AvailableGestures.Add("scissors");
-            AvailableGestures.Add("lizard");
-            AvailableGestures.Add("spock");
 
         }
 
@@ -41,6 +37,7 @@ namespace rpsls
             {
                 PlayerOne = new Human();
                 PlayerTwo = new CPU();
+                PlayerTwo.name = "cpuPlayer";
             }
             else
             {
@@ -69,32 +66,32 @@ namespace rpsls
 
         private void CompareGestures(string PlayerOneChoice, string PlayerTwoChoice)
         {
-            if (PlayerOneChoice == "rock" && PlayerTwoChoice == "scissors" || PlayerTwoChoice == "lizard")
+            if ((PlayerOneChoice == "rock" && PlayerTwoChoice == "scissors") || (PlayerOneChoice == "rock" && PlayerTwoChoice == "lizard"))
             {
                 Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
                 PlayerOne.WinCounter += 1;
             }
-            //if (int.Parse(PlayerOneChoice) > int.Parse(PlayerTwoChoice))
-            //{
-            //    Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
-            //    PlayerOne.WinCounter += 1;
-            //}
-            else if(PlayerOneChoice == "paper" && PlayerTwoChoice == "rock" || PlayerTwoChoice == "Spock")
+            else if (PlayerOneChoice == "rock" & PlayerTwoChoice == "paper")
+            {
+                Console.WriteLine(PlayerTwoChoice + " beats " + PlayerOneChoice + " " + PlayerTwo.name + " wins the round");
+                PlayerTwo.WinCounter += 1;
+            }
+            else if((PlayerOneChoice == "paper" && PlayerTwoChoice == "rock") || (PlayerOneChoice == "paper" && PlayerTwoChoice == "Spock"))
             {
                 Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
                 PlayerOne.WinCounter += 1;
             }
-            else if(PlayerOneChoice == "scissors" && PlayerTwoChoice == "paper" || PlayerTwoChoice == "lizard")
+            else if((PlayerOneChoice == "scissors" && PlayerTwoChoice == "paper") || (PlayerOneChoice == "scissors" && PlayerTwoChoice == "lizard"))
             {
                 Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
                 PlayerOne.WinCounter += 1;
             }
-            else if(PlayerOneChoice == "lizard" && PlayerTwoChoice == "spock" || PlayerTwoChoice == "paper")
+            else if((PlayerOneChoice == "lizard" && PlayerTwoChoice == "spock") || (PlayerOneChoice == "lizard" && PlayerTwoChoice == "paper"))
             {
                 Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
                 PlayerOne.WinCounter += 1;
             }
-            else if(PlayerOneChoice == "spock" && PlayerTwoChoice == "scissors" || PlayerTwoChoice == "rock")
+            else if((PlayerOneChoice == "spock" && PlayerTwoChoice == "scissors") || (PlayerTwoChoice == "rock" && PlayerOneChoice =="spock"))
             {
                 Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
                 PlayerOne.WinCounter += 1;
@@ -108,10 +105,31 @@ namespace rpsls
             }
             else
             {
+                //Console.WriteLine("Not a valid answer.");
                 Console.WriteLine(PlayerTwoChoice + " beats " + PlayerOneChoice + " " + PlayerTwo.name + " wins the round");
                 PlayerTwo.WinCounter += 1;
-               
+
             }
+
+        }
+        public void RestartGame()
+        {
+            Console.WriteLine("Would you like to play again? Yes or No?");
+            string answer = Console.ReadLine().ToLower();
+            switch (answer)
+            {
+                case "yes":
+                    StartGame();
+                    break;
+                case "no":
+                    Console.WriteLine("Thanks for playing. Goodbye.");
+                    break;
+                default:
+                    Console.WriteLine("No bananas or flamingos here.");
+                    RestartGame();
+                    break;
+            }
+
         }
         public void StartGame()
         {
@@ -127,15 +145,15 @@ namespace rpsls
                 if(PlayerOne.WinCounter == 2)
                 {
                     Console.WriteLine(PlayerOne.name + " Wins!");
-                    //break;
+                    break;
                 }
                 else if (PlayerTwo.WinCounter == 2)
                 {
                     Console.WriteLine(PlayerTwo.name + " Wins!");
-                    //break;
+                    break;
                 }
             }
-
+            RestartGame();
         }
     }
 }
