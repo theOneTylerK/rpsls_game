@@ -144,7 +144,7 @@ namespace rpsls
         }
         public override void RestartGame()
         {
-            Console.WriteLine("Would you like to play again? Yes or No?");
+            Console.WriteLine("To play again type 'yes', to quit type 'no', or type 'exit' to choose a new game mode.");
             string answer = Console.ReadLine().ToLower();
             switch (answer)
             {
@@ -154,6 +154,12 @@ namespace rpsls
                 case "no":
                     Console.WriteLine("Thanks for playing. Goodbye.");
                     break;
+                case "exit":
+                    GameFactory factory = new GameFactory();
+                    Game game = factory.SelectGameMode();
+                    game.StartGame();
+                    break;
+
                 default:
                     Console.WriteLine("No bananas or flamingos here.");
                     RestartGame();
@@ -275,7 +281,6 @@ namespace rpsls
 
                     RestartGame();
                     break;
-
                 default:
                     TryAgain();
                     break;

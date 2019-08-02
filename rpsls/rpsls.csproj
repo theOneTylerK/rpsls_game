@@ -42,6 +42,8 @@
     <Compile Include="GameRPS.cs" />
     <Compile Include="GameRPSLS.cs" />
     <Compile Include="GameFactory.cs" />
+    <Compile Include="HumanRPS.cs" />
+    <Compile Include="CpuRPS.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

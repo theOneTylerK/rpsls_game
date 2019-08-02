@@ -29,22 +29,15 @@ namespace rpsls
             switch (NumberOfPlayers)
             {
                 case "1":
-                    PlayerOne = new Human();
-                    PlayerTwo = new CPU();
-                    PlayerTwo.name = "cpuPlayer";
-                    break;
                 case "one":
-                    PlayerOne = new Human();
-                    PlayerTwo = new CPU();
+                    PlayerOne = new HumanRPS();
+                    PlayerTwo = new CpuRPS();
                     PlayerTwo.name = "cpuPlayer";
                     break;
                 case "2":
-                    PlayerOne = new Human();
-                    PlayerTwo = new Human();
-                    break;
                 case "two":
-                    PlayerOne = new Human();
-                    PlayerTwo = new Human();
+                    PlayerOne = new HumanRPS();
+                    PlayerTwo = new HumanRPS();
                     break;
                 case "banana":
                     Console.WriteLine("No bananas here");
@@ -118,7 +111,7 @@ namespace rpsls
         }
         public override void RestartGame()
         {
-            Console.WriteLine("Would you like to play again? Yes or No?");
+            Console.WriteLine("To play again type 'yes', to quit type 'no', or type 'exit' to choose a new game mode.");
             string answer = Console.ReadLine().ToLower();
             switch (answer)
             {
@@ -128,13 +121,20 @@ namespace rpsls
                 case "no":
                     Console.WriteLine("Thanks for playing. Goodbye.");
                     break;
+                case "exit":
+                    GameFactory factory = new GameFactory();
+                    Game game = factory.SelectGameMode();
+                    game.StartGame();
+                    break;
+
                 default:
                     Console.WriteLine("No bananas or flamingos here.");
                     RestartGame();
                     break;
             }
-
         }
+
+       
 
         public override void TryAgain()
         {
@@ -250,6 +250,7 @@ namespace rpsls
                     RestartGame();
                     break;
 
+                
                 default:
                     TryAgain();
                     break;
@@ -306,17 +307,23 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": "
+                            + PlayerOne.WinCounter + " "
+                            + PlayerTwo.name + ": "
+                            + PlayerTwo.WinCounter);
+
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 2)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 2)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -379,6 +386,7 @@ namespace rpsls
                     RestartGame();
                     break;
 
+                
                 default:
                     TryAgain();
                     break;

@@ -18,17 +18,11 @@ namespace rpsls
             switch (UserChoice)
             {
                 case "1":
-                    game = new GameRPSLS();
-                    
-                    break;
                 case "one":
                     game = new GameRPSLS();
                    
                     break;
                 case "2":
-                    game = new GameRPS();
-                   
-                    break;
                 case "two":
                     game = new GameRPS();
                 

@@ -1,21 +1,23 @@
 ﻿<Properties StartupConfiguration="{F85868F9-0B35-41B4-A556-351BC0FEACD8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="rpsls/GameFactory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="rpsls/CPU.cs">
     <Files>
-      <File FileName="rpsls/Program.cs" Line="12" Column="1" />
-      <File FileName="rpsls/GameFactory.cs" Line="51" Column="1" />
-      <File FileName="rpsls/StartGame.cs" Line="31" Column="9" />
-      <File FileName="rpsls/GameOne.cs" Line="25" Column="48" />
-      <File FileName="rpsls/GameTwo.cs" Line="256" Column="1" />
+      <File FileName="rpsls/Program.cs" Line="13" Column="1" />
+      <File FileName="rpsls/GameFactory.cs" Line="45" Column="1" />
+      <File FileName="rpsls/StartGame.cs" Line="23" Column="1" />
+      <File FileName="rpsls/GameOne.cs" Line="255" Column="38" />
+      <File FileName="rpsls/GameTwo.cs" Line="284" Column="1" />
       <File FileName="rpsls/Player.cs" Line="22" Column="44" />
-      <File FileName="rpsls/Human.cs" Line="69" Column="29" />
-      <File FileName="rpsls/CPU.cs" Line="24" Column="52" />
+      <File FileName="rpsls/Human.cs" Line="76" Column="1" />
+      <File FileName="rpsls/HumanRPS.cs" Line="46" Column="28" />
+      <File FileName="rpsls/CPU.cs" Line="39" Column="10" />
+      <File FileName="rpsls/CpuRPS.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="rpsls" expanded="True">
             <Node name="rpsls" expanded="True">
-              <Node name="GameFactory.cs" selected="True" />
+              <Node name="CPU.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -29,7 +31,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.ItemProperties.rpsls PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/tylerkoepke/Desktop/DevCodeCamp/Assignments/rpsls/rpsls/rpsls/GameRPS.cs" relfile="rpsls/GameRPS.cs" line="278" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
