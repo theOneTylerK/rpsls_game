@@ -10,7 +10,6 @@ namespace rpsls
         public string Rules;
         public Player PlayerOne;
         public Player PlayerTwo;
-        public List<string> AvailableGestures = new List<string>();
 
 
 
@@ -26,25 +25,59 @@ namespace rpsls
         //Member Methods (Can Do)
         //private int GetNumberOfPlayers()
         //{
-            
+
         //}
         private void EstablishPlayers()
         {
             Console.WriteLine("How many number of players?");
-            int NumberOfPlayers = int.Parse(Console.ReadLine());
+            string NumberOfPlayers = Console.ReadLine().ToLower();
 
-            if (NumberOfPlayers == 1)
+            switch (NumberOfPlayers)
             {
-                PlayerOne = new Human();
-                PlayerTwo = new CPU();
-                PlayerTwo.name = "cpuPlayer";
-            }
-            else
-            {
-                PlayerOne = new Human();
-                PlayerTwo = new Human();
+                case "1":
+                    PlayerOne = new Human();
+                    PlayerTwo = new CPU();
+                    PlayerTwo.name = "cpuPlayer";
+                    break;
+                case "one":
+                    PlayerOne = new Human();
+                    PlayerTwo = new CPU();
+                    PlayerTwo.name = "cpuPlayer";
+                    break;
+                case "2":
+                    PlayerOne = new Human();
+                    PlayerTwo = new Human();
+                    break;
+                case "two":
+                    PlayerOne = new Human();
+                    PlayerTwo = new Human();
+                    break;
+                case "banana":
+                    Console.WriteLine("No bananas here");
+                    EstablishPlayers();
+                    break;
+                case "flamingo":
+                    Console.WriteLine("No flamingos present at this time");
+                    EstablishPlayers();
+                    break;
+                default:
+                    Console.WriteLine("Please select an appropriate number of players");
+                    EstablishPlayers();
+                    break;
             }
         }
+        //    //if (NumberOfPlayers == "1") 
+        //    //{
+        //    //    PlayerOne = new Human();
+        //    //    PlayerTwo = new CPU();
+        //    //    PlayerTwo.name = "cpuPlayer";
+        //    //}
+        //    else
+        //    {
+        //        PlayerOne = new Human();
+        //        PlayerTwo = new Human();
+        //    }
+        //}
         public void DisplayRules()
         {
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock! The rules of the game are as follows: " +
