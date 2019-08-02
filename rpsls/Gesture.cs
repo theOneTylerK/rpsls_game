@@ -13,7 +13,7 @@ namespace rpsls
         //Constructor (Spawner)
         public Gesture(string name)
         {
-            this.name = name;
+            name = "rock";
             didWin = false;
      
         }

@@ -17,6 +17,7 @@ namespace rpsls
             WinCounter = 0;
             this.name = name;
             AvailableGestures= new List<string>();
+
             AvailableGestures.Add("rock");
             AvailableGestures.Add("paper");
             AvailableGestures.Add("scissors");

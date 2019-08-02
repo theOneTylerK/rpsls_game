@@ -23,10 +23,7 @@ namespace rpsls
         }
 
         //Member Methods (Can Do)
-        //private int GetNumberOfPlayers()
-        //{
-
-        //}
+        
         private void EstablishPlayers()
         {
             Console.WriteLine("How many number of players?");
@@ -69,21 +66,34 @@ namespace rpsls
        
         public void DisplayRules()
         {
-            Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock! The rules of the game are as follows: " +
-                "Just like the classic game Rock, Paper, Scissors each player will decide which gesture they want to play. " +
-                "The gestures will be compared and the player whose gesture beats the other player's gesture will win the round. " +
-                "Best of 3 will win the game. " +
+            Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock!" + Environment.NewLine +
+                "The rules of the game are as follows: " + Environment.NewLine +
+                "Just like the classic game Rock, Paper, Scissors each player will" +Environment.NewLine +
+                "decide which gesture they want to play. " + Environment.NewLine +
+                "The gestures will be compared and the player whose gesture beats" + Environment.NewLine +
+                "the other player's gesture will win the round. " +
+                Environment.NewLine +
                 "Gesture rules are as follows: " +
-                "Rock > Scissors, " +
-                "Rock > Lizard, " +
-                "Paper > Rock, " +
-                "Paper > Spock, " +
-                "Scissors > Paper, " +
-                "Scissors > Lizard, " +
-                "Lizard > Spock, " +
-                "Lizard > Paper, " +
-                "Spock > Scissors, " +
-                "Spock > Rock.");
+                Environment.NewLine +
+                "Rock beats Scissors, " +
+                Environment.NewLine +
+                "Rock beats Lizard, " +
+                Environment.NewLine +
+                "Paper beats Rock, " +
+                Environment.NewLine +
+                "Paper beats Spock, " +
+                Environment.NewLine +
+                "Scissors beats Paper, " +
+                Environment.NewLine +
+                "Scissors beats Lizard, " +
+                Environment.NewLine +
+                "Lizard beats Spock, " +
+                Environment.NewLine +
+                "Lizard beats Paper, " +
+                Environment.NewLine +
+                "Spock beats Scissors, " +
+                Environment.NewLine +
+                "Spock beats Rock.") ;
         }
 
         private void CompareGestures(string PlayerOneChoice, string PlayerTwoChoice)
@@ -154,25 +164,27 @@ namespace rpsls
 
         }
 
-        public void HideText()
-        {
-            int ChosenGesture = Console.CursorTop;
-            Console.SetCursorPosition(0, Console.CursorTop);
-            Console.Write("...", Console.WindowWidth);
-            Console.SetCursorPosition(0, ChosenGesture);
-        }
         public void StartGame()
         {
+            //Console.WriteLine(" " + Environment.NewLine);
             DisplayRules();
-            Console.WriteLine("Please enter the length of series you would like to play. Avalable lengths: Do or Die, Best of 3, Best of 5, and Best of 7");
+            EstablishPlayers();
+            PlayerOne.ChooseName();
+            PlayerTwo.ChooseName();
+            Console.WriteLine("Please enter the length of series you would like to play." + Environment.NewLine +
+                "Avalable lengths:" + Environment.NewLine +
+                "Do or Die" + Environment.NewLine +
+                "Best of 3" + Environment.NewLine +
+                "Best of 5" + Environment.NewLine +
+                "Best of 7");
             string SeriesLength = Console.ReadLine().ToLower();
             switch (SeriesLength)
             {
                 case "do or die":
                     
-                    EstablishPlayers();
-                    PlayerOne.ChooseName();
-                    PlayerTwo.ChooseName();
+                    //EstablishPlayers();
+                    //PlayerOne.ChooseName();
+                    //PlayerTwo.ChooseName();
                     PlayerOne.WinCounter = 0;
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 1 && PlayerTwo.WinCounter < 1)
@@ -192,6 +204,7 @@ namespace rpsls
                             break;
                         }
                     }
+
                     RestartGame();
                     break;
                 case "best of 3":
@@ -218,6 +231,7 @@ namespace rpsls
                             break;
                         }
                     }
+
                     RestartGame();
                     break;
                 case "best of 5":
@@ -244,6 +258,7 @@ namespace rpsls
                             break;
                         }
                     }
+
                     RestartGame();
                     break;
                 case "best of 7":
@@ -270,6 +285,7 @@ namespace rpsls
                             break;
                         }
                     }
+
                     RestartGame();
                     break;
                 default:
