@@ -30,6 +30,8 @@ namespace rpsls
 
 
         public abstract string MakeChoice();
+
+        public abstract void HideText();
         
     }
 }

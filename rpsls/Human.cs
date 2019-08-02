@@ -22,30 +22,37 @@ namespace rpsls
             switch (playerInput)
             {
                 case "rock":
-                    Console.WriteLine("Your choice has been logged");
                     gesture = playerInput;
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    HideText();
                     break;
                 case "paper":
-                    Console.WriteLine("Your choice has been logged");
                     gesture = playerInput;
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    HideText();
                     break;
                 case "scissors":
-                    Console.WriteLine("Your choice has been logged");
                     gesture = playerInput;
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    HideText();
                     break;
                 case "lizard":
-                    Console.WriteLine("Your choice has been logged");
                     gesture = playerInput;
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    HideText();
                     break;
                 case "spock":
-                    Console.WriteLine("Your choice has been logged");
                     gesture = playerInput;
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    HideText();
                     break;
                 default:
                     Console.WriteLine("You can't win this game with bananas or flamingos.");
                     MakeChoice();
                     break;
             }
+            
+            HideText();
             return gesture;
         }
         public override void ChooseName()
@@ -55,7 +62,14 @@ namespace rpsls
             
 
         }
-            
+        public override void HideText()
+        {
+            int ChosenGesture = Console.CursorTop;
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write("...", Console.WindowWidth);
+            Console.SetCursorPosition(0, ChosenGesture);
+        }
+
     }
 }
 

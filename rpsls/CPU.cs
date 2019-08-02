@@ -64,5 +64,15 @@ namespace rpsls
          
 
         }
+        public override void HideText()
+        {
+            
+            
+                int ChosenGesture = Console.CursorTop;
+                Console.SetCursorPosition(0, Console.CursorTop);
+                Console.Write("...", Console.WindowWidth);
+                Console.SetCursorPosition(0, ChosenGesture);
+            
+        }
     }
 }
