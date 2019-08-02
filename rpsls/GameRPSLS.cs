@@ -162,7 +162,130 @@ namespace rpsls
 
         }
 
-       
+        public override void TryAgain()
+        {
+            Console.WriteLine("Please enter the length of series you would like to play." + Environment.NewLine +
+               "Avalable lengths:" + Environment.NewLine +
+               "Do or Die" + Environment.NewLine +
+               "Best of 3" + Environment.NewLine +
+               "Best of 5" + Environment.NewLine +
+               "Best of 7");
+            string SeriesLength = Console.ReadLine().ToLower();
+            switch (SeriesLength)
+            {
+                case "do or die":
+                    PlayerOne.WinCounter = 0;
+                    PlayerTwo.WinCounter = 0;
+                    while (PlayerOne.WinCounter < 1 && PlayerTwo.WinCounter < 1)
+                    {
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
+                        if (PlayerOne.WinCounter == 1)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerOne.name + " Wins!");
+                            break;
+                        }
+                        else if (PlayerTwo.WinCounter == 1)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerTwo.name + " Wins!");
+                            break;
+                        }
+                    }
+
+                    RestartGame();
+                    break;
+                case "best of 3":
+                case "3":
+                case "three":
+                case "best of three":
+                    PlayerOne.WinCounter = 0;
+                    PlayerTwo.WinCounter = 0;
+                    while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
+                    {
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
+                        if (PlayerOne.WinCounter == 2)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerOne.name + " Wins!");
+                            break;
+                        }
+                        else if (PlayerTwo.WinCounter == 2)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerTwo.name + " Wins!");
+                            break;
+                        }
+                    }
+                    RestartGame();
+                    break;
+
+                case "best of 5":
+                case "5":
+                case "five":
+                case "best of five":
+                    PlayerOne.WinCounter = 0;
+                    PlayerTwo.WinCounter = 0;
+                    while (PlayerOne.WinCounter < 3 && PlayerTwo.WinCounter < 3)
+                    {
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
+                        if (PlayerOne.WinCounter == 3)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerOne.name + " Wins!");
+                            break;
+                        }
+                        else if (PlayerTwo.WinCounter == 3)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerTwo.name + " Wins!");
+                            break;
+                        }
+                    }
+
+                    RestartGame();
+                    break;
+
+                case "best of 7":
+                case "7":
+                case "seven":
+                case "best of seven":
+                    PlayerOne.WinCounter = 0;
+                    PlayerTwo.WinCounter = 0;
+                    while (PlayerOne.WinCounter < 4 && PlayerTwo.WinCounter < 4)
+                    {
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
+                        if (PlayerOne.WinCounter == 4)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerOne.name + " Wins!");
+                            break;
+                        }
+                        else if (PlayerTwo.WinCounter == 4)
+                        {
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine(PlayerTwo.name + " Wins!");
+                            break;
+                        }
+                    }
+
+                    RestartGame();
+                    break;
+
+                default:
+                    TryAgain();
+                    break;
+
+            }
+
+
+        }
+    
+
         public override void StartGame()
         {
             //Console.WriteLine(" " + Environment.NewLine);
@@ -203,74 +326,8 @@ namespace rpsls
                     RestartGame();
                     break;
                 case "best of 3":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 2)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 2)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-                    RestartGame();
-                    break;
                 case "3":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 2)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 2)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-
-                    RestartGame();
-                    break;
-
                 case "three":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 2)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 2)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-                    RestartGame();
-                    break;
-
                 case "best of three":
                     PlayerOne.WinCounter = 0;
                     PlayerTwo.WinCounter = 0;
@@ -295,77 +352,8 @@ namespace rpsls
                     break;
 
                 case "best of 5":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 3 && PlayerTwo.WinCounter < 3)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 3)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 3)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-
-                    RestartGame();
-                    break;
-
                 case "5":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 3 && PlayerTwo.WinCounter < 3)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 3)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 3)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-
-                    RestartGame();
-                    break;
-
                 case "five":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 3 && PlayerTwo.WinCounter < 3)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 3)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 3)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-
-                    RestartGame();
-                    break;
-
                 case "best of five":
                     PlayerOne.WinCounter = 0;
                     PlayerTwo.WinCounter = 0;
@@ -390,78 +378,9 @@ namespace rpsls
                     RestartGame();
                     break;
 
-                case "best of 7":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 4 && PlayerTwo.WinCounter < 4)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 4)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 4)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-
-                    RestartGame();
-                    break;
-
-                case "7":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 4 && PlayerTwo.WinCounter < 4)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 4)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 4)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-
-                    RestartGame();
-                    break;
-
-                case "seven":
-                    PlayerOne.WinCounter = 0;
-                    PlayerTwo.WinCounter = 0;
-                    while (PlayerOne.WinCounter < 4 && PlayerTwo.WinCounter < 4)
-                    {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                        CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
-                        if (PlayerOne.WinCounter == 4)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerOne.name + " Wins!");
-                            break;
-                        }
-                        else if (PlayerTwo.WinCounter == 4)
-                        {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
-                            Console.WriteLine(PlayerTwo.name + " Wins!");
-                            break;
-                        }
-                    }
-
-                    RestartGame();
-                    break;
-
+                case "best of 7": 
+                case "7":             
+                case "seven":    
                 case "best of seven":
                     PlayerOne.WinCounter = 0;
                     PlayerTwo.WinCounter = 0;
@@ -487,8 +406,7 @@ namespace rpsls
                     break;
 
                 default:
-                    Console.WriteLine("Please enter your choice as you see it listed on the screen");
-                    StartGame();
+                    TryAgain();
                     break;
 
             }

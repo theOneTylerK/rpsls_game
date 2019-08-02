@@ -39,6 +39,8 @@ namespace rpsls
         
 
         public abstract void StartGame();
+
+        public abstract void TryAgain();
         
     }
 }
