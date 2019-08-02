@@ -8,10 +8,12 @@ namespace rpsls
         public static void Main(string[] args)
         {
 
-
-
-            Game game = new Game();
+            GameFactory factory = new GameFactory();
+            Game game = factory.SelectGameMode();
             game.StartGame();
+
+            
+            
         }
     }
 }
