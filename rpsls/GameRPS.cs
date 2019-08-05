@@ -56,10 +56,14 @@ namespace rpsls
 
         public override void DisplayRules()
         {
-            Console.WriteLine("Welcome to Rock, Paper, Scissors!" + Environment.NewLine +
-                "The rules of the game are as follows: " + Environment.NewLine +
-                "Each player will decide which gesture they want to play. " + Environment.NewLine +
-                "The gestures will be compared and the player whose gesture beats" + Environment.NewLine +
+            Console.WriteLine("Welcome to Rock, Paper, Scissors!"
+                + Environment.NewLine +
+                "The rules of the game are as follows: "
+                + Environment.NewLine +
+                "Each player will decide which gesture they want to play. "
+                + Environment.NewLine +
+                "The gestures will be compared and the player whose gesture beats"
+                + Environment.NewLine +
                 "the other player's gesture will win the round. " +
                 Environment.NewLine +
                 "Gesture rules are as follows: " +
@@ -75,27 +79,27 @@ namespace rpsls
         {
             if (PlayerOneChoice == "rock" && PlayerTwoChoice == "scissors")
             {
-                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " "
+                    + PlayerOne.name + " wins the round");
                 PlayerOne.WinCounter += 1;
             }
-            //else if (PlayerOneChoice == "rock" & PlayerTwoChoice == "paper")
-            //{
-            //    Console.WriteLine(PlayerTwoChoice + " beats " + PlayerOneChoice + " " + PlayerTwo.name + " wins the round");
-            //    PlayerTwo.WinCounter += 1;
-            //}
+            
             else if (PlayerOneChoice == "paper" && PlayerTwoChoice == "rock")
             {
-                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name
+                    + " wins the round");
                 PlayerOne.WinCounter += 1;
             }
             else if (PlayerOneChoice == "scissors" && PlayerTwoChoice == "paper")
             {
-                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " " + PlayerOne.name + " wins the round");
+                Console.WriteLine(PlayerOneChoice + " beats " + PlayerTwoChoice + " "
+                    + PlayerOne.name + " wins the round");
                 PlayerOne.WinCounter += 1;
             }
             else if (PlayerOneChoice == PlayerTwoChoice)
             {
-                Console.WriteLine(PlayerOneChoice + " ties " + PlayerTwoChoice + "." + " It's a Draw.");
+                Console.WriteLine(PlayerOneChoice + " ties " + PlayerTwoChoice +
+                    "." + " It's a Draw.");
                 PlayerOne.WinCounter += 0;
                 PlayerTwo.WinCounter += 0;
 
@@ -103,7 +107,8 @@ namespace rpsls
             else
             {
                 //Console.WriteLine("Not a valid answer.");
-                Console.WriteLine(PlayerTwoChoice + " beats " + PlayerOneChoice + " " + PlayerTwo.name + " wins the round");
+                Console.WriteLine(PlayerTwoChoice + " beats " + PlayerOneChoice + " "
+                    + PlayerTwo.name + " wins the round");
                 PlayerTwo.WinCounter += 1;
 
             }
@@ -138,7 +143,8 @@ namespace rpsls
 
         public override void TryAgain()
         {
-            Console.WriteLine("Please enter the length of series you would like to play." + Environment.NewLine +
+            Console.WriteLine("Please enter the length of series you would like to play."
+                + Environment.NewLine +
                "Avalable lengths:" + Environment.NewLine +
                "Do or Die" + Environment.NewLine +
                "Best of 3" + Environment.NewLine +
@@ -152,17 +158,20 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 1 && PlayerTwo.WinCounter < 1)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter
+                            + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 1)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 1)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -178,17 +187,20 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 2 && PlayerTwo.WinCounter < 2)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter
+                            + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 2)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 2)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -204,17 +216,20 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 3 && PlayerTwo.WinCounter < 3)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": "
+                            + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 3)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 3)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -231,17 +246,20 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 4 && PlayerTwo.WinCounter < 4)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": "
+                            + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 4)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 4)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -267,7 +285,8 @@ namespace rpsls
             EstablishPlayers();
             PlayerOne.ChooseName();
             PlayerTwo.ChooseName();
-            Console.WriteLine("Please enter the length of series you would like to play." + Environment.NewLine +
+            Console.WriteLine("Please enter the length of series you would like to play."
+                + Environment.NewLine +
                 "Avalable lengths:" + Environment.NewLine +
                 "Do or Die" + Environment.NewLine +
                 "Best of 3" + Environment.NewLine +
@@ -281,17 +300,20 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 1 && PlayerTwo.WinCounter < 1)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter
+                            + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 1)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 1)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -316,14 +338,16 @@ namespace rpsls
                         if (PlayerOne.WinCounter == 2)
                         {
                             Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
-                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": "
+                                + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 2)
                         {
                             Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
-                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": "
+                                + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -340,17 +364,20 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 3 && PlayerTwo.WinCounter < 3)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter
+                            + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 3)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 3)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
@@ -367,17 +394,20 @@ namespace rpsls
                     PlayerTwo.WinCounter = 0;
                     while (PlayerOne.WinCounter < 4 && PlayerTwo.WinCounter < 4)
                     {
-                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                        Console.WriteLine("The score is " + PlayerOne.name + ": " + PlayerOne.WinCounter
+                            + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                         CompareGestures(PlayerOne.MakeChoice(), PlayerTwo.MakeChoice());
                         if (PlayerOne.WinCounter == 4)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerOne.name + " Wins!");
                             break;
                         }
                         else if (PlayerTwo.WinCounter == 4)
                         {
-                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": " + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
+                            Console.WriteLine("The Final Score is " + PlayerOne.name + ": "
+                                + PlayerOne.WinCounter + " " + PlayerTwo.name + ": " + PlayerTwo.WinCounter);
                             Console.WriteLine(PlayerTwo.name + " Wins!");
                             break;
                         }
